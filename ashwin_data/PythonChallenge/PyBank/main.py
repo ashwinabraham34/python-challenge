@@ -22,13 +22,14 @@ with open(csvpath, newline="") as csvfile:
         net_change=profit_loss-amount_before
         amount_before=profit_loss
         net_change_data.append(net_change)
-        mean_net_change=mean(net_change_data)
         highest_change=max(net_change_data)
         lowest_change=min(net_change_data)
         if (net_change==highest_change):
             highest_date=bank_data[0]
         if(net_change==lowest_change):
             lowest_date=bank_data[0]
+        
+mean_net_change=mean(net_change_data)
 
 result=(
     'Financial Analysis\n'
