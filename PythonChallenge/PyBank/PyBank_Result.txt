@@ -1,0 +1,7 @@
+Financial Analysis
+______________________
+Total Months: 86 months
+Net Amount: $38382578
+Average Net change: $7803.476744186047
+The greatest increase in profits: Feb-2012 $(1926159)
+The greatest decrease in profits: Sep-2013 $(-2196167)
