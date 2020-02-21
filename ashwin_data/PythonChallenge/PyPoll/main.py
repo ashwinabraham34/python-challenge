@@ -36,7 +36,7 @@ with open(output_path,'w',newline='') as text:
     for candidates in vote_count:
         candidate_vote=vote_count.get(candidates)
         percent_vote=(int(candidate_vote)/votes)*100
-        percent_vote=round(percent_vote,4)
+        percent_vote=round(percent_vote,5)
 
         if (candidate_vote>winner):
             winner=candidate_vote

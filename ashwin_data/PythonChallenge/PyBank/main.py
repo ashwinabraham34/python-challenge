@@ -1,7 +1,8 @@
 import os
 import csv
-from statistics import mean
-csvpath=os.path.join('/Users/neethaabraham/Documents/ashwin_data/bank_data.csv')
+
+
+csvpath=os.path.join('/Users/neethaabraham/Documents/ashwin_data/budget_data.csv')
 
 months=0
 net_amount=0
@@ -20,8 +21,8 @@ with open(csvpath, newline="") as csvfile:
         months=months+1
         net_amount=net_amount+profit_loss
         net_change=profit_loss-amount_before
-        amount_before=profit_loss
         net_change_data.append(net_change)
+        amount_before=int(bank_data[1])
         highest_change=max(net_change_data)
         lowest_change=min(net_change_data)
         if (net_change==highest_change):
@@ -29,14 +30,14 @@ with open(csvpath, newline="") as csvfile:
         if(net_change==lowest_change):
             lowest_date=bank_data[0]
         
-mean_net_change=mean(net_change_data)
-
+    mean_net_change=sum(net_change_data)/len(net_change_data)
+    mean_net_change=round(mean_net_change,2)
 result=(
     'Financial Analysis\n'
     '______________________\n'
     f'Total Months: {months} months\n'
-    f'Net Amount: ${net_amount}\n'
-    f'Average Net change: ${mean_net_change}\n'
+    f'Total: ${net_amount}\n'
+    f'Average Change: ${mean_net_change}\n'
     f'The greatest increase in profits: {highest_date} $({highest_change})\n'
     f'The greatest decrease in profits: {lowest_date} $({lowest_change})\n'
     )
